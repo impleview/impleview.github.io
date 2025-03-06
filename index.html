@@ -35,13 +35,10 @@
   <option value="yes">Yes</option>
 </select></p>
 
-<p>Additional Hourly Consulatation Charge At Discounted Rate: 
-<select name="hourly_charge" id="hourly_charge">
-  <option value = 0 selected="selected">None</option>
-  <option value = 145>half hour $145</option>
-  <option value = 245>1 hour $245</option>
-  <option value = 360>1.5 hour $360</option>
-  <option value = 550>2 hour $550</option>  
+<p>Maximum Saver (Eliminates Expensive Labor/Material) 
+<select name="saver" id="saver">
+  <option value = "advanced">Advanced (Courtesy)</option>  
+  <option value = "ultimate">Ultimate (Cannot be done by others)</option>  
 </select></p>
 
 <br>
@@ -64,17 +61,15 @@
         var jadu = document.getElementById("jadu").value;
         var adu = document.getElementById("adu").value;
         var window_quote = document.getElementById("window_quote").value;
-        var hourly_charge = document.getElementById("hourly_charge").value;
+        var saver = document.getElementById("saver").value;
         var result;
         var addition = 0; 
-        addition = addition + hourly_charge;
         if (stories == 2) {addition = addition + 50}
         if (stories == 3) {addition = addition + 150}
         if (window_quote == "yes") {addition = addition + 100}
         if (jadu == "yes") {addition = addition + 200}
         if (adu == "attached") {addition = addition + 230}
         if (adu == "detached") {addition = addition + 450}
-            
           if (id == "quote") {
               if (sqft == 7) {result = "Email t24@impleview.com for an estimate"}
             if (sqft == 6) {result = "$1,600-$3,000"}
@@ -89,6 +84,8 @@
             if (sqft == 1) {
                 result = 500+addition }
 
+        if (saver == "ultimate") {result = result*1.1}
+        
         }
 
 
