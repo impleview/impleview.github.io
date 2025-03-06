@@ -1,7 +1,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+.box {
+  background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.result {
+  border: none;
+  color: #04AA6D;
+  padding: 10px 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button2 {background-color: #008CBA;} /* Blue */
+.button3 {background-color: #f44336;} /* Red */ 
+.button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
+.button5 {background-color: #555555;} /* Black */
+</style>
+
 <h1>California Residential Title 24 Report Service</h1>
 
-<b>Title 24 report service: EMAIL your PLAN to <it>t24 AT impleview.com</it></b>
+<button id="email_t24" class="button button"><a href="mailto:t24@impleview.com">Email Certified Energy Analyst</a></button>
 
 <p>Main House Square Footage: <select name="sqft" id="sqft">
   <option value=1>Less than 1,500 sqft or ADU Only</option>
@@ -46,58 +79,73 @@
 
 <br>
 
-<button id="quote" onclick="myFunction('quote')"  size="20">Quote</button>
+<button id="quote" onclick="myFunction('quote')" class="box button">Quote</button>
 
-<p><b>Price : <input id="output1" size="20" /></b></p>
+<p><b><output id="output1" class="result"/></b></p>
 
 <p id="answer">
 
 </p>
 
 <script>
-
     function myFunction(id) {
         var sqft = document.getElementById("sqft").value;
-        var stories = document.getElementById("stories").value;
+        
+          if (id == "quote") {
+              if (sqft == 7) {
+                quote = "Email t24@impleview.com for an estimate"
+              } else
+            if (sqft == 6) {
+              quote = "$1,600-$3,000"
+            } else
+            if (sqft == 5) {
+              quote = "$1,300-$1,600"
+            } else
+            if (sqft == 4) {
+                quote = apply_saver(650 + additional())
+            } else
+            if (sqft == 3) {
+                quote = apply_saver(600 + additional()) 
+            } else
+            if (sqft == 2) {
+                quote = apply_saver(550 + additional()) 
+            } else
+            if (sqft == 1) {
+                quote = apply_saver(500 + additional()) 
+            } 
+        }
+
+        document.getElementById("output1").value = "Price : " + quote;
+
+    }
+    function additional(){
+    	var stories = document.getElementById("stories").value;
         var jadu = document.getElementById("jadu").value;
         var adu = document.getElementById("adu").value;
         var window_quote = document.getElementById("window_quote").value;
-        var saver = document.getElementById("saver").value;
-        var result;
-        var addition = 0; 
-        if (stories == 2) {addition = addition + 50}
-        if (stories == 3) {addition = addition + 150}
-        if (window_quote == "yes") {addition = addition + 80}
-        if (jadu == "yes") {addition = addition + 200}
-        if (adu == "attached") {addition = addition + 230}
-        if (adu == "detached") {addition = addition + 450}
-          if (id == "quote") {
-              if (sqft == 7) {quote = "Email t24@impleview.com for an estimate"}
-            if (sqft == 6) {quote = "$1,600-$3,000"}
-            if (sqft == 5) {
-                quote = "$1,300-$1,600" }
-            if (sqft == 4) {
-                result = 650+addition }
-            if (sqft == 3) {
-                result = 600+addition  }
-            if (sqft == 2) {
-                result = 550+addition }
-            if (sqft == 1) {
-                result = 500+addition }
-        quote =  result;
-        if (saver == "ultimate") {quote = result + result/10}
-        
-        }
-
-        document.getElementById("output1").value = quote;
-
+        var additional = 0; 
+        if (stories == 2) {additional = additional + 50}
+        if (stories == 3) {additional = additional + 150}
+        if (window_quote == "yes") {additional = additional + 80}
+        if (jadu == "yes") {additional = additional + 200}
+        if (adu == "attached") {additional = additional + 230}
+        if (adu == "detached") {additional = additional + 450}
+        return additional;
+    
+    }
+    function apply_saver(quote){
+    	var result = quote;
+    	var saver = document.getElementById("saver").value;
+        if (saver == "ultimate") {result = quote + quote/10}
+		return "$"+result;	
+    	
     }
 </script>
 
 
-<h1>Residential Design Consultation Service</h1>
+<h1>Bay Area Residential Design Consultation Service</h1>
 <b>EMAIL your Request to <it>design AT impleview.com</it></b><br>
-Online/Phone Hourly Rate is $275.<br>
-Onsite Hourly Rate is $320, with 1.5 hours mininum charge.
+Online/Phone Hourly Rate is $235.<br>
+Onsite Hourly Rate is $270 (1.5 hours mininum) and a commute charge.
 
 
