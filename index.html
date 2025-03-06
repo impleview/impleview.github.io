@@ -100,22 +100,22 @@ function mailto(id) {
               quote = "$1,300-$1,900"
             } else
             if (sqft == 6) {
-                quote = apply_saver(700 + additional())
+                quote = apply_advanced(720 + additional())
             } else
             if (sqft == 5) {
-                quote = apply_saver(660 + additional()) 
+                quote = apply_advanced(700 + additional()) 
             } else
             if (sqft == 4) {
-                quote = apply_saver(630 + additional())
+                quote = apply_advanced(660 + additional())
             } else
             if (sqft == 3) {
-                quote = apply_saver(600 + additional()) 
+                quote = apply_advanced(620 + additional()) 
             } else
             if (sqft == 2) {
-                quote = apply_saver(550 + additional()) 
+                quote = apply_advanced(570 + additional()) 
             } else
             if (sqft == 1) {
-                quote = apply_saver(500 + additional()) 
+                quote = apply_advanced(500 + additional()) 
             } 
         }
 
@@ -126,22 +126,21 @@ function mailto(id) {
     	var stories = document.getElementById("stories").value;
         var jadu = document.getElementById("jadu").value;
         var adu = document.getElementById("adu").value;
-        var window_quote = document.getElementById("window_quote").value;
         var additional = 0; 
         if (stories == 2) {additional = additional + 50}
         if (stories == 3) {additional = additional + 150}
-        if (window_quote == "yes") {additional = additional + 80}
         if (jadu == "yes") {additional = additional + 200}
         if (adu == "attached") {additional = additional + 230}
         if (adu == "detached") {additional = additional + 450}
         return additional;
     
     }
-    function apply_saver(quote){
-    	var result = quote;
-    	var saver = document.getElementById("saver").value;
-        if (saver == "ultimate") {result = quote + quote/10}
-		return "$"+result;	
+    function apply_advanced(quote){
+        var window_quote = document.getElementById("window_quote").value;
+        var saver = document.getElementById("saver").value;
+        if (saver == "ultimate") {quote = quote + quote/10}
+        if (window_quote == "yes") {quote = quote + quote/9}    
+        return "$"+Math.ceil(quote);	
     	
     }
 </script>
