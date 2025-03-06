@@ -35,6 +35,15 @@
   <option value="yes">Yes</option>
 </select></p>
 
+<p>Additional Hourly Consulatation Charge At Discounted Rate: 
+<select name="hourly_charge" id="hourly_charge">
+  <option value = 0 selected="selected">None</option>
+  <option value = 145>half hour $145</option>
+  <option value = 245>1 hour $245</option>
+  <option value = 360>1.5 hour $360</option>
+  <option value = 550>2 hour $550</option>  
+</select></p>
+
 <br>
 
 <button id="quote" onclick="myFunction('quote')">Quote</button>
@@ -55,8 +64,10 @@
         var jadu = document.getElementById("jadu").value;
         var adu = document.getElementById("adu").value;
         var window_quote = document.getElementById("window_quote").value;
+        var hourly_charge = document.getElementById("hourly_charge").value;
         var result;
         var addition = 0; 
+        addition = hourly_charge;
         if (stories == 2) {addition = addition + 50}
         if (stories == 3) {addition = addition + 150}
         if (window_quote == "yes") {addition = addition + 100}
