@@ -1,3 +1,92 @@
 Title 24 report service: EMAIL your PLAN to <it>t24 AT impleview.com</it>
+
+
+<h1>California Residential Title 24 Report Fee Calculator</h1>
+
+<p>Main House Square Footage: <select name="sqft" id="sqft">
+  <option value=1>Less than 1,500 sqft or ADU Only</option>
+  <option value=2>1,500 - 2,499 sqft</option>
+  <option value=3 selected="selected">2,500 - 3,499 sqft</option>
+  <option value=4>3,500 - 4,999 sqft</option>
+  <option value=5>5,000 - 9,999 sqft</option>
+  <option value=6>10,000 - 20,000 sqft</option>
+  <option value=7>larger than 20,000 sqft</option>
+</select></p>
+
+<p>Number of Stories (Including Basement): 
+<select name="stories" id="stories">
+  <option value=1>1</option>
+  <option value=2 selected="selected">2</option>
+  <option value=3>3</option>
+</select></p>
+
+<p>Add JADU?
+<select name="jadu" id="jadu">
+  <option value="no" selected="selected">No</option>
+  <option value="yes">Yes</option>
+</select></p>
+<p>Add ADU: 
+<select name="adu" id="adu">
+  <option value="none" selected="selected">None</option>
+  <option value="attached">Attached</option>
+  <option value="detached">Detached</option>
+</select></p>
+
+<p>Itemized Custom Window Specs (Window quote needed): 
+<select name="window_quote" id="window_quote">
+  <option value="no" selected="selected">No</option>
+  <option value="yes">Yes</option>
+</select></p>
+
 <br>
-Design consultation: EMAIL your PLAN to <it>design AT impleview.com</it>
+
+<button id="quote" onclick="myFunction('quote')">Quote</button>
+
+<p>Price:<input id="output1" size="20" /></p>
+
+<p id="idOne">
+<p id="idTwo">
+<p id="answer">
+
+</p>
+
+<script>
+
+    function myFunction(id) {
+        var sqft = document.getElementById("sqft").value;
+        var stories = document.getElementById("stories").value;
+        var jadu = document.getElementById("jadu").value;
+        var adu = document.getElementById("adu").value;
+        var window_quote = document.getElementById("window_quote").value;
+        var result;
+        var addition = 0; 
+        if (stories == 2) {addition = addition + 50}
+        if (stories == 3) {addition = addition + 150}
+        if (window_quote == "yes") {addition = addition + 100}
+        if (jadu == "yes") {addition = addition + 200}
+        if (adu == "attached") {addition = addition + 230}
+        if (adu == "detached") {addition = addition + 450}
+            
+          if (id == "quote") {
+              if (sqft == 7) {result = "Email t24@impleview.com for an estimate"}
+            if (sqft == 6) {result = "$1,600-$3,000"}
+            if (sqft == 5) {
+                result = "$1,300-$1,600" }
+            if (sqft == 4) {
+                result = 650+addition }
+            if (sqft == 3) {
+                result = 600+addition  }
+            if (sqft == 2) {
+                result = 550+addition }
+            if (sqft == 1) {
+                result = 500+addition }
+
+        }
+
+
+        document.getElementById("idOne").value = sqft;
+        document.getElementById("idTwo").value = stories;
+        document.getElementById("output1").value = result;
+
+    }
+</script>
