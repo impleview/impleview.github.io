@@ -32,9 +32,8 @@
 .button5 {background-color: #555555;} /* Black */
 </style>
 
-<h1>California Residential Title 24 Report Service</h1>
-
-<button id="email_t24" class="button button"><a href="mailto:t24@impleview.com">Email Certified Energy Analyst</a></button>
+<h2>California Residential Title 24 Report Service</h2>
+<button id="email_t24" onClick="mailto('t24')" class="box">Email Certified Energy Analyst</button>
 
 <p>Main House Square Footage: <select name="sqft" id="sqft">
   <option value=1>Less than 1,500 sqft or ADU Only</option>
@@ -71,23 +70,20 @@
   <option value="yes">Yes</option>
 </select></p>
 
-<p>Maximum Saver (Eliminates Expensive Labor/Material) 
+<p>Maximum Saver (Eliminates Expensive Labor/Materials) 
 <select name="saver" id="saver">
   <option value = "advanced">Advanced (Courtesy)</option>  
   <option value = "ultimate">Ultimate (Impossible By Others)</option>  
 </select></p>
 
-<br>
-
 <button id="quote" onclick="myFunction('quote')" class="box button">Quote</button>
 
 <p><b><output id="output1" class="result"/></b></p>
-
-<p id="answer">
-
-</p>
-
 <script>
+
+function mailto(id) {
+  location.href = "mailto:"+id+"@impleview.com";
+}
     function myFunction(id) {
         var sqft = document.getElementById("sqft").value;
         
@@ -143,9 +139,11 @@
 </script>
 
 
-<h1>Bay Area Residential Design Consultation Service</h1>
-<b>EMAIL your Request to <it>design AT impleview.com</it></b><br>
+<h2>Bay Area Residential Design/Technical Consultation Service</h2>
+<button id="email_design" onClick="mailto('design')" class="box">Email to Get Started</button>
+
+<br>
 Online/Phone Hourly Rate is $235.<br>
-Onsite Hourly Rate is $270 (1.5 hours mininum) and a commute charge.
+Onsite Hourly Rate is $270 (1.5 hours mininum) plus a commute charge.
 
 
