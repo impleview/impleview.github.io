@@ -71,10 +71,10 @@
         if (adu == "attached") {addition = addition + 230}
         if (adu == "detached") {addition = addition + 450}
           if (id == "quote") {
-              if (sqft == 7) {result = "Email t24@impleview.com for an estimate"}
-            if (sqft == 6) {result = "$1,600-$3,000"}
+              if (sqft == 7) {quote = "Email t24@impleview.com for an estimate"}
+            if (sqft == 6) {quote = "$1,600-$3,000"}
             if (sqft == 5) {
-                result = "$1,300-$1,600" }
+                quote = "$1,300-$1,600" }
             if (sqft == 4) {
                 result = 650+addition }
             if (sqft == 3) {
@@ -83,15 +83,15 @@
                 result = 550+addition }
             if (sqft == 1) {
                 result = 500+addition }
-
-        if (saver == "ultimate") {result = result*1.1}
+        quote =  result;
+        if (saver == "ultimate") {quote = result*1.1}
         
         }
 
 
         document.getElementById("idOne").value = sqft;
         document.getElementById("idTwo").value = stories;
-        document.getElementById("output1").value = result;
+        document.getElementById("output1").value = quote;
 
     }
 </script>
