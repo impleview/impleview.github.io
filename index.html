@@ -138,7 +138,7 @@ function mailto(id) {
     function apply_advanced(quote){
         var window_quote = document.getElementById("window_quote").value;
         var saver = document.getElementById("saver").value;
-        if (saver == "ultimate") {quote = quote + quote/10}
+        if (saver == "ultimate") {quote = quote + quote/8}
         if (window_quote == "yes") {quote = quote + quote/9}    
         return "$"+Math.ceil(quote);	
     	
