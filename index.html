@@ -127,10 +127,10 @@ function mailto(id) {
         var jadu = document.getElementById("jadu").value;
         var adu = document.getElementById("adu").value;
         var additional = 0; 
-        if (stories == 2) {additional = additional + 50}
+        if (stories == 2) {additional = additional + 40}
         if (stories == 3) {additional = additional + 150}
-        if (jadu == "yes") {additional = additional + 200}
-        if (adu == "attached") {additional = additional + 230}
+        if (jadu == "yes") {additional = additional + 190}
+        if (adu == "attached") {additional = additional + 220}
         if (adu == "detached") {additional = additional + 450}
         return additional;
     
@@ -140,7 +140,7 @@ function mailto(id) {
         var saver = document.getElementById("saver").value;
         if (saver == "ultimate") {quote = quote + quote/8}
         if (window_quote == "yes") {quote = quote + quote/9}    
-        return "$"+Math.ceil(quote);	
+        return "$" + Math.ceil(quote) + "(CF1R submission/registration fees included)";	
     	
     }
 </script>
