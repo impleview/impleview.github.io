@@ -106,16 +106,16 @@ function mailto(id) {
                 quote = apply_advanced(700 + additional()) 
             } else
             if (sqft == 4) {
-                quote = apply_advanced(660 + additional())
+                quote = apply_advanced(670 + additional())
             } else
             if (sqft == 3) {
-                quote = apply_advanced(620 + additional()) 
+                quote = apply_advanced(630 + additional()) 
             } else
             if (sqft == 2) {
-                quote = apply_advanced(570 + additional()) 
+                quote = apply_advanced(580 + additional()) 
             } else
             if (sqft == 1) {
-                quote = apply_advanced(500 + additional()) 
+                quote = apply_advanced(520 + additional()) 
             } 
         }
 
@@ -138,8 +138,8 @@ function mailto(id) {
     function apply_advanced(quote){
         var window_quote = document.getElementById("window_quote").value;
         var saver = document.getElementById("saver").value;
-        if (window_quote == "yes") {quote = quote * 1.15}    
-        if (saver == "ultimate") {quote = quote * 1.3}
+        if (window_quote == "yes") {quote = quote * 1.12}    
+        if (saver == "ultimate") {quote = quote * 1.2}
         return "$" + Math.ceil(quote) + pricing_note();	
     	
     }
