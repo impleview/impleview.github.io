@@ -30,6 +30,34 @@
 .button3 {background-color: #f44336;} /* Red */ 
 .button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
 .button5 {background-color: #555555;} /* Black */
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 340px;
+  background-color: black;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 5px 5px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -170px; /* Use half of the width (120/2 = 60), to center the tooltip */
+
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
 </style>
 
 <h2>California Residential Title 24 Report Service</h2>
@@ -66,17 +94,20 @@
   <option value="detached">Detached</option>
 </select></p>
 
-<p>Itemized Custom Window Specs (Window quote needed): 
+<p>Itemized Custom Window Specs (Window quote needed):
+<i class="tooltip">(What's this?)<span class="tooltiptext">Typically, big custom windows or patio doors are made of aluminum that have different u-factors and SHGC than ordinary fiberglass windows. A quote sheet from a window dealer contains u-factors and SHGC for every window that would accurately parameterize the T24 calculation. More than 50% of the high-end homeowners who did not have windows quote ready for T24 ended by re-calculating the T24 at a later stage (during construction) when they secured the window quote.</span></i>
 <select name="window_quote" id="window_quote">
   <option value="no" selected="selected">No</option>
   <option value="yes">Yes</option>
 </select></p>
 
 <p>Maximum Saver (Eliminates Expensive Labor/Materials) 
+<i class="tooltip">(What's this?)<span class="tooltiptext">While the advanced option provides cost-conscious calculation, the ultimate option exhausts all the possiblities to maximize the energy efficiency while staying away from expensive materials and additional labor cost that typically cost tens of thousands dollars more to implement.</span></i>
 <select name="saver" id="saver">
   <option value = "advanced">Advanced (Courtesy)</option>  
   <option value = "ultimate">Ultimate (Most Popular Option, Impossible By Others)</option>  
-</select></p>
+</select>
+</p>
 
 <p>CF1R Registration Fee
 <select name="reg" id="reg">
