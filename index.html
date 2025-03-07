@@ -78,6 +78,11 @@
   <option value = "ultimate">Ultimate (Most Popular Option, Impossible By Others)</option>  
 </select></p>
 
+<p>CF1R Registration Fee
+<select name="reg" id="reg">
+  <option value = "included">Included</option>  
+</select></p>
+
 <button id="quote" onclick="myFunction('quote')" class="box button">Quote</button>
 
 <p><b><output id="output1" class="result"/></b></p>
@@ -94,10 +99,10 @@ function mailto(id) {
                 quote = "Email for an estimate"
               } else
             if (sqft == 8) {
-              quote = "$1,600-$3,300" + pricing_note()
+              quote = "$1,600-$3,300"
             } else
             if (sqft == 7) {
-              quote = "$1,300-$1,900" + pricing_note()
+              quote = "$1,300-$1,900"
             } else
             if (sqft == 6) {
                 quote = apply_advanced(720 + additional())
@@ -140,8 +145,7 @@ function mailto(id) {
         var saver = document.getElementById("saver").value;
         if (window_quote == "yes") {quote = quote * 1.12}    
         if (saver == "ultimate") {quote = quote * 1.2}
-        return "$" + Math.ceil(quote) + pricing_note();	
-    	
+        return "$" + Math.ceil(quote);
     }
     function pricing_note(){
       return " (CF1R registration fees included)";
