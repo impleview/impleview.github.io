@@ -138,8 +138,8 @@ function mailto(id) {
     function apply_advanced(quote){
         var window_quote = document.getElementById("window_quote").value;
         var saver = document.getElementById("saver").value;
-        if (saver == "ultimate") {quote = quote + quote/8}
-        if (window_quote == "yes") {quote = quote + quote/9}    
+        if (window_quote == "yes") {quote = quote * 1.15}    
+        if (saver == "ultimate") {quote = quote * 1.3}
         return "$" + Math.ceil(quote) + pricing_note();	
     	
     }
