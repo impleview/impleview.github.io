@@ -91,13 +91,13 @@ function mailto(id) {
         
           if (id == "quote") {
               if (sqft == 9) {
-                quote = "Email t24@impleview.com for an estimate"
+                quote = "Email for an estimate"
               } else
             if (sqft == 8) {
-              quote = "$1,600-$3,300"
+              quote = "$1,600-$3,300" + pricing_note()
             } else
             if (sqft == 7) {
-              quote = "$1,300-$1,900"
+              quote = "$1,300-$1,900" + pricing_note()
             } else
             if (sqft == 6) {
                 quote = apply_advanced(720 + additional())
@@ -140,8 +140,11 @@ function mailto(id) {
         var saver = document.getElementById("saver").value;
         if (saver == "ultimate") {quote = quote + quote/8}
         if (window_quote == "yes") {quote = quote + quote/9}    
-        return "$" + Math.ceil(quote) + " (CF1R registration fees included)";	
+        return "$" + Math.ceil(quote) + pricing_note();	
     	
+    }
+    function pricing_note(){
+      return " (CF1R registration fees included)";
     }
 </script>
 
