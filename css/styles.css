@@ -9,7 +9,7 @@
 
 
 .box {
-  background-color: black;/* Green */
+  background-color: 555555;/* Black */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -23,7 +23,7 @@
 
 .result {
   border: none;
-  color: #04AA6D;
+  color: #111; /* Black */
   padding: 10px 6px;
   text-align: center;
   text-decoration: none;
