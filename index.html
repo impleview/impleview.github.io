@@ -127,6 +127,7 @@
 }
 </style>
 
+
 <h2>California Residential Title 24 Report Service</h2>
 <button id="email_t24" onClick="mailto('t24')" class="box">Email Certified Energy Analyst</button>
 
@@ -162,14 +163,14 @@
 </select></p>
 
 <p>Itemized Custom Window Specs (Window quote needed):
-<i class="tooltip">(What's this?)<span class="tooltiptext">Typically, big custom windows or patio doors are made of aluminum that have different u-factors and SHGC than ordinary fiberglass windows. A quote sheet from a window dealer contains u-factors and SHGC for every window that would accurately parameterize the T24 calculation. More than 50% of the high-end homeowners who did not have windows quote ready for T24 ended by re-calculating the T24 at a later stage (during construction) when they secured the window quote.</span></i>
+<i class="popup" onclick="popupFunction('popup_text_window')">(What's this?)<span class="popuptext" id="popup_text_window">Typically, big custom windows or patio doors are made of aluminum that have different u-factors and SHGC than ordinary fiberglass windows. A quote sheet from a window dealer contains u-factors and SHGC for every window that would accurately parameterize the T24 calculation. More than 50% of the high-end homeowners who did not have windows quote ready for T24 ended by re-calculating the T24 at a later stage (during construction) when they secured the window quote.</span></i>
 <select name="window_quote" id="window_quote">
   <option value="no" selected="selected">No</option>
   <option value="yes">Yes</option>
 </select></p>
 
 <p>Maximum Saver (Eliminates Expensive Labor/Materials) 
-<i class="tooltip">(What's this?)<span class="tooltiptext">While the advanced option provides cost-conscious calculation, the ultimate option exhausts all the possiblities to maximize the energy efficiency while staying away from expensive materials and additional labor cost that typically cost tens of thousands dollars more to implement.</span></i>
+<i class="popup" onclick="popupFunction('popup_text_saver')">(What's this?)<span class="popuptext" id="popup_text_saver">While the advanced option provides cost-conscious calculation, the ultimate option exhausts all the possiblities to maximize the energy efficiency while staying away from expensive materials and additional labor cost that typically cost tens of thousands dollars more to implement.</span></i>
 <select name="saver" id="saver">
   <option value = "advanced">Advanced (Courtesy)</option>  
   <option value = "ultimate">Ultimate (Most Popular Option, Impossible By Others)</option>  
@@ -181,7 +182,7 @@
   <option value = "included">Included</option>  
 </select></p>
 
-<button id="quote" onclick="myFunction('quote')" class="box button">Quote</button>
+<button id="quote" onclick="quoteFunction('quote')" class="box button">Quote</button>
 
 <p><b><output id="output1" class="result"/></b></p>
 <script>
@@ -189,7 +190,7 @@
 function mailto(id) {
   location.href = "mailto:"+id+"@impleview.com";
 }
-    function myFunction(id) {
+    function quoteFunction(id) {
         var sqft = document.getElementById("sqft").value;
         
           if (id == "quote") {
@@ -247,6 +248,10 @@ function mailto(id) {
     }
     function pricing_note(){
       return " (CF1R registration fees included)";
+    }
+    function popupFunction(id) {
+      var popup = document.getElementById(id);
+      popup.classList.toggle("show");
     }
 </script>
 
