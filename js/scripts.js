@@ -66,4 +66,73 @@
     });
   
   })(jQuery); // End of use strict
+
+
+
+function mailto(id) {
+  location.href = "mailto:"+id+"@impleview.com";
+}
+    function quoteFunction(id) {
+        var sqft = document.getElementById("sqft").value;
+        
+          if (id == "quote") {
+              if (sqft == 9) {
+                quote = "Email for an estimate"
+              } else
+            if (sqft == 8) {
+              quote = "$1,600-$3,300"
+            } else
+            if (sqft == 7) {
+              quote = "$1,300-$1,900"
+            } else
+            if (sqft == 6) {
+                quote = apply_advanced(720 + additional())
+            } else
+            if (sqft == 5) {
+                quote = apply_advanced(700 + additional()) 
+            } else
+            if (sqft == 4) {
+                quote = apply_advanced(670 + additional())
+            } else
+            if (sqft == 3) {
+                quote = apply_advanced(630 + additional()) 
+            } else
+            if (sqft == 2) {
+                quote = apply_advanced(580 + additional()) 
+            } else
+            if (sqft == 1) {
+                quote = apply_advanced(520 + additional()) 
+            } 
+        }
+
+        document.getElementById("output1").value = "Price : " + quote;
+
+    }
+    function additional(){
+    	var stories = document.getElementById("stories").value;
+        var jadu = document.getElementById("jadu").value;
+        var adu = document.getElementById("adu").value;
+        var additional = 0; 
+        if (stories == 2) {additional = additional + 40}
+        if (stories == 3) {additional = additional + 130}
+        if (jadu == "yes") {additional = additional + 160}
+        if (adu == "attached") {additional = additional + 190}
+        if (adu == "detached") {additional = additional + 450}
+        return additional;
+    
+    }
+    function apply_advanced(quote){
+        var window_quote = document.getElementById("window_quote").value;
+        var saver = document.getElementById("saver").value;
+        if (window_quote == "yes") {quote = quote * 1.12}    
+        if (saver == "ultimate") {quote = quote * 1.2}
+        return "$" + Math.ceil(quote);
+    }
+    function pricing_note(){
+      return " (CF1R registration fees included)";
+    }
+    function popupFunction(id) {
+      var popup = document.getElementById(id);
+      popup.classList.toggle("show");
+    }
   
