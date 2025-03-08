@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <title>Freelancer - Start Bootstrap Theme</title>
+        <meta name="description" content="Impleview">
+        <meta name="author" content="Impleview">
+        <title>Impleview</title>
         <!-- Font Awesome icons (free version)-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -385,7 +385,60 @@
                 <!-- About Section Content-->
                 <div class="row">
                     <div class="col-lg-4 ml-auto">
-                        <p class="pre-wrap lead">Pricing 1</p>
+                        <p>Main House Square Footage: <select name="sqft" id="sqft">
+  <option value=1>Less than 1,500 sqft or ADU Only</option>
+  <option value=2 selected="selected">1,500 - 2,249 sqft</option>
+  <option value=3>2,250 - 2,999 sqft</option>
+  <option value=4>3,000 - 3,999 sqft</option>
+  <option value=5>4,000 - 4,999 sqft</option>
+  <option value=6>5,000 - 5,999 sqft</option>
+  <option value=7>6,000 - 9,999 sqft</option>
+  <option value=8>10,000 - 20,000 sqft</option>
+  <option value=9>larger than 20,000 sqft</option>
+</select></p>
+
+<p>Number of Stories (Including Basement): 
+<select name="stories" id="stories">
+  <option value=1 selected="selected">1</option>
+  <option value=2>2</option>
+  <option value=3>3</option>
+</select></p>
+
+<p>Add JADU?
+<select name="jadu" id="jadu">
+  <option value="no" selected="selected">No</option>
+  <option value="yes">Yes</option>
+</select></p>
+<p>Add ADU: 
+<select name="adu" id="adu">
+  <option value="none" selected="selected">None</option>
+  <option value="attached">Attached</option>
+  <option value="detached">Detached</option>
+</select></p>
+
+<p>Itemized Custom Window Specs (Window quote needed):
+<i class="popup" onclick="popupFunction('popup_text_window')" style="font-size:14px; ">(Show/Hide Details)<span class="popuptext" id="popup_text_window">Typically, big custom windows or patio doors are made of aluminum that have different u-factors and SHGC than ordinary fiberglass windows. A quote from a window dealer contains u-factors and SHGC for every window that would accurately parameterize the T24 calculation. More than 50% of the high-end homeowners who did not have windows quote ready for T24 ended up re-calculating the T24 at a later stage (during construction) when they secured a window quote.</span></i>
+<select name="window_quote" id="window_quote">
+  <option value="no" selected="selected">No</option>
+  <option value="yes">Yes</option>
+</select></p>
+
+<p>Maximum Saver (Eliminates Expensive Labor/Materials) 
+<i class="popup" onclick="popupFunction('popup_text_saver')" style="font-size:14px; ">(Show/Hide Details)<span class="popuptext" id="popup_text_saver">While the advanced option provides cost-conscious calculation, the ultimate option exhausts all the possiblities to maximize the energy efficiency while staying away from expensive materials and additional labor cost that typically cost tens of thousands dollars more to implement.</span></i>
+<select name="saver" id="saver">
+  <option value = "advanced">Advanced (Courtesy)</option>  
+  <option value = "ultimate">Ultimate (Most Popular Option, Impossible By Others)</option>  
+</select>
+</p>
+
+<p>CF1R Registration Fee
+<select name="reg" id="reg">
+  <option value = "included">Included</option>  
+</select></p>
+
+<button id="quote" onclick="quoteFunction('quote')" class="box button">Quote</button>
+
+<p><b><output id="output1" class="result"/></b></p>
                     </div>
                     <div class="col-lg-4 mr-auto">
                         <p class="pre-wrap lead">Pricing 2</p>
