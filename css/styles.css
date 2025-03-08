@@ -37,7 +37,7 @@
 .box_red {background-color: #f44336;} /* Red */ 
 .box_gray {background-color: #e7e7e7; color: black;} /* Gray */ 
 .box_black {background-color: #555555;} /* Black */
-.box_white {background-color: #ffffff;} /* Whilte */
+.invisible_box {background-color: #ffffff; border:none; background-color: white} /* White */
 
 .tooltip {
   position: relative;
