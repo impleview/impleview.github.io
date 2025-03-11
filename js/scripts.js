@@ -69,9 +69,10 @@
 
 
 
-function mailto(id) {
-  location.href = "mailto:"+id+"@impleview.com";
-}
+   function mailto(id) {
+     location.href = "mailto:"+id+"@impleview.com?subject=["+id+"] Consultation Request for <Add your property address>&body=<Add your request. Include the plan and details as much as possible.>";
+   }
+
     function quoteFunction(id) {
         var sqft = document.getElementById("sqft").value;
         
