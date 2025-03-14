@@ -87,22 +87,22 @@
               quote = "$1,300-$1,900"
             } else
             if (sqft == 6) {
-                quote = apply_advanced(720 + additional())
+                quote = apply_advanced(740 + additional())
             } else
             if (sqft == 5) {
-                quote = apply_advanced(700 + additional()) 
+                quote = apply_advanced(720 + additional()) 
             } else
             if (sqft == 4) {
-                quote = apply_advanced(670 + additional())
+                quote = apply_advanced(690 + additional())
             } else
             if (sqft == 3) {
-                quote = apply_advanced(630 + additional()) 
+                quote = apply_advanced(650 + additional()) 
             } else
             if (sqft == 2) {
-                quote = apply_advanced(580 + additional()) 
+                quote = apply_advanced(600 + additional()) 
             } else
             if (sqft == 1) {
-                quote = apply_advanced(520 + additional()) 
+                quote = apply_advanced(540 + additional()) 
             } 
         }
 
@@ -114,11 +114,11 @@
         var jadu = document.getElementById("jadu").value;
         var adu = document.getElementById("adu").value;
         var additional = 0; 
-        if (stories == 2) {additional = additional + 40}
-        if (stories == 3) {additional = additional + 130}
-        if (jadu == "yes") {additional = additional + 160}
-        if (adu == "attached") {additional = additional + 190}
-        if (adu == "detached") {additional = additional + 450}
+        if (stories == 2) {additional = additional + 30}
+        if (stories == 3) {additional = additional + 120}
+        if (jadu == "yes") {additional = additional + 165}
+        if (adu == "attached") {additional = additional + 195}
+        if (adu == "detached") {additional = additional + 460}
         return additional;
     
     }
