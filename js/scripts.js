@@ -106,7 +106,7 @@
             } 
         }
 
-        document.getElementById("output1").value = "Price : " + quote;
+        document.getElementById("output1").value = "Price Estimate: " + quote;
 
     }
     function additional(){
@@ -127,7 +127,7 @@
         var saver = document.getElementById("saver").value;
         if (window_quote == "yes") {quote = quote * 1.12}    
         if (saver == "ultimate") {quote = quote * 1.2}
-        return "$" + Math.ceil(quote);
+        return "$" + Math.ceil(quote) + " - $" + Math.ceil(quote+100);
     }
     function pricing_note(){
       return " (CF1R registration fees included)";
