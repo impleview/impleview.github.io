@@ -81,10 +81,10 @@
                 quote = "Email for an estimate"
               } else
             if (sqft == 8) {
-              quote = "$1,600-$3,300"
+              quote = "$1,950-$4,950"
             } else
             if (sqft == 7) {
-              quote = "$1,300-$1,900"
+              quote = "$1,300-$2,200"
             } else
             if (sqft == 6) {
                 quote = apply_advanced(740 + additional())
