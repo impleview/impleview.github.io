@@ -78,7 +78,7 @@
         
           if (id == "quote") {
               if (sqft == 9) {
-                quote = "Email for an estimate"
+                quote = "Email to discuss."
               } else
             if (sqft == 8) {
               quote = "$1,950-$4,950"
