@@ -127,7 +127,7 @@
         var saver = document.getElementById("saver").value;
         if (window_quote == "yes") {quote = quote * 1.12}    
         if (saver == "ultimate") {quote = quote * 1.2}
-        return "$" + Math.ceil(quote) + " - $" + Math.ceil(quote+100);
+        return "$" + Math.ceil(quote) + " - $" + Math.ceil(quote * 1.08);
     }
     function pricing_note(){
       return " (CF1R registration fees included)";
