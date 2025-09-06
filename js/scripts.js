@@ -84,7 +84,7 @@
               quote = "$1,950-$4,950"
             } else
             if (sqft == 7) {
-              quote = "$1,400-$2,200"
+              quote = "$1,400-$2,800"
             } else
             if (sqft == 6) {
                 quote = apply_advanced(740 + additional())
