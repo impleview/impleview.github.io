@@ -84,19 +84,19 @@
               quote = "$2,350-$4,950"
             } else
             if (sqft == 7) {
-              quote = "$1,500-$2,800"
+              quote = "$1,600-$2,950"
             } else
             if (sqft == 6) {
-                quote = apply_advanced(840 + additional())
+                quote = apply_advanced(940 + additional())
             } else
             if (sqft == 5) {
-                quote = apply_advanced(790 + additional()) 
+                quote = apply_advanced(870 + additional()) 
             } else
             if (sqft == 4) {
-                quote = apply_advanced(740 + additional())
+                quote = apply_advanced(780 + additional())
             } else
             if (sqft == 3) {
-                quote = apply_advanced(690 + additional()) 
+                quote = apply_advanced(700 + additional()) 
             } else
             if (sqft == 2) {
                 quote = apply_advanced(660 + additional()) 
@@ -126,9 +126,9 @@
         var window_quote = document.getElementById("window_quote").value;
         var saver = document.getElementById("saver").value;
         if (window_quote == "yes") {quote = quote * 1.11}    
-        if (saver == "paloalto") {quote = quote * 1.13}
+        if (saver == "paloalto") {quote = quote * 1.1}
         if (saver == "ultimate") {quote = quote * 1.22}
-       return "$" + Math.ceil(quote) + " - $" + Math.ceil(quote * 1.15);
+       return "$" + Math.ceil(quote) + " - $" + Math.ceil(quote * 1.25);
     }
     function pricing_note(){
       return " (CF1R registration fees included)";
