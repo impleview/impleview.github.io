@@ -87,19 +87,19 @@
               quote = "$1,650-$2,950"
             } else
             if (sqft == 6) {
-                quote = apply_advanced(940 + additional())
+                quote = apply_advanced(980 + additional())
             } else
             if (sqft == 5) {
-                quote = apply_advanced(870 + additional()) 
+                quote = apply_advanced(910 + additional()) 
             } else
             if (sqft == 4) {
-                quote = apply_advanced(780 + additional())
+                quote = apply_advanced(840 + additional())
             } else
             if (sqft == 3) {
-                quote = apply_advanced(705 + additional()) 
+                quote = apply_advanced(750 + additional()) 
             } else
             if (sqft == 2) {
-                quote = apply_advanced(655 + additional()) 
+                quote = apply_advanced(660 + additional()) 
             } else
             if (sqft == 1) {
                 quote = apply_advanced(540 + additional()) 
@@ -126,8 +126,8 @@
         var window_quote = document.getElementById("window_quote").value;
         var saver = document.getElementById("saver").value;
         if (window_quote == "yes") {quote = quote * 1.11}    
-        if (saver == "paloalto") {quote = quote * 1.1}
-        if (saver == "ultimate") {quote = quote * 1.22}
+        if (saver == "paloalto") {quote = quote * 1.08}
+        if (saver == "ultimate") {quote = quote * 1.2}
        return "$" + Math.ceil(quote) + " - $" + Math.ceil(quote * 1.25);
     }
     function pricing_note(){
