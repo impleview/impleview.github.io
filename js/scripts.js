@@ -87,16 +87,16 @@
               quote = "$1,650-$2,950"
             } else
             if (sqft == 6) {
-                quote = apply_advanced(980 + additional())
+                quote = apply_advanced(990 + additional())
             } else
             if (sqft == 5) {
                 quote = apply_advanced(920 + additional()) 
             } else
             if (sqft == 4) {
-                quote = apply_advanced(840 + additional())
+                quote = apply_advanced(850 + additional())
             } else
             if (sqft == 3) {
-                quote = apply_advanced(780 + additional()) 
+                quote = apply_advanced(790 + additional()) 
             } else
             if (sqft == 2) {
                 quote = apply_advanced(680 + additional()) 
@@ -117,7 +117,7 @@
         if (stories == 2) {additional = additional + 30}
         if (stories == 3) {additional = additional + 100}
         if (jadu == "yes") {additional = additional + 125}
-        if (adu == "attached") {additional = additional + 145}
+        if (adu == "attached") {additional = additional + 155}
         if (adu == "detached") {additional = additional + 425}
         return additional;
     
@@ -126,7 +126,7 @@
         var window_quote = document.getElementById("window_quote").value;
         var saver = document.getElementById("saver").value;
         if (window_quote == "yes") {quote = quote * 1.1}    
-        if (saver == "paloalto") {quote = quote * 1.05}
+        if (saver == "paloalto") {quote = quote * 1.07}
         if (saver == "ultimate") {quote = quote * 1.2}
        return "$" + Math.ceil(quote) + " - $" + Math.ceil(quote * 1.25);
     }
