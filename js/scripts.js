@@ -96,10 +96,10 @@
                 quote = apply_advanced(780 + additional())
             } else
             if (sqft == 3) {
-                quote = apply_advanced(700 + additional()) 
+                quote = apply_advanced(705 + additional()) 
             } else
             if (sqft == 2) {
-                quote = apply_advanced(660 + additional()) 
+                quote = apply_advanced(655 + additional()) 
             } else
             if (sqft == 1) {
                 quote = apply_advanced(540 + additional()) 
