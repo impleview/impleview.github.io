@@ -81,25 +81,25 @@
                 quote = "Email to discuss."
               } else
             if (sqft == 8) {
-              quote = "$1,950-$4,950"
+              quote = "$2,350-$4,950"
             } else
             if (sqft == 7) {
-              quote = "$1,400-$2,800"
+              quote = "$1,500-$2,800"
             } else
             if (sqft == 6) {
-                quote = apply_advanced(740 + additional())
+                quote = apply_advanced(840 + additional())
             } else
             if (sqft == 5) {
-                quote = apply_advanced(720 + additional()) 
+                quote = apply_advanced(790 + additional()) 
             } else
             if (sqft == 4) {
-                quote = apply_advanced(690 + additional())
+                quote = apply_advanced(740 + additional())
             } else
             if (sqft == 3) {
-                quote = apply_advanced(650 + additional()) 
+                quote = apply_advanced(690 + additional()) 
             } else
             if (sqft == 2) {
-                quote = apply_advanced(600 + additional()) 
+                quote = apply_advanced(660 + additional()) 
             } else
             if (sqft == 1) {
                 quote = apply_advanced(540 + additional()) 
@@ -114,20 +114,20 @@
         var jadu = document.getElementById("jadu").value;
         var adu = document.getElementById("adu").value;
         var additional = 0; 
-        if (stories == 2) {additional = additional + 30}
+        if (stories == 2) {additional = additional + 45}
         if (stories == 3) {additional = additional + 120}
         if (jadu == "yes") {additional = additional + 165}
         if (adu == "attached") {additional = additional + 195}
-        if (adu == "detached") {additional = additional + 460}
+        if (adu == "detached") {additional = additional + 475}
         return additional;
     
     }
     function apply_advanced(quote){
         var window_quote = document.getElementById("window_quote").value;
         var saver = document.getElementById("saver").value;
-        if (window_quote == "yes") {quote = quote * 1.12}    
-        if (saver == "paloalto") {quote = quote * 1.19}
-        if (saver == "ultimate") {quote = quote * 1.23}
+        if (window_quote == "yes") {quote = quote * 1.11}    
+        if (saver == "paloalto") {quote = quote * 1.13}
+        if (saver == "ultimate") {quote = quote * 1.22}
        return "$" + Math.ceil(quote) + " - $" + Math.ceil(quote * 1.15);
     }
     function pricing_note(){
