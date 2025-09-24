@@ -99,7 +99,7 @@
                 quote = apply_advanced(790 + additional()) 
             } else
             if (sqft == 2) {
-                quote = apply_advanced(680 + additional()) 
+                quote = apply_advanced(670 + additional()) 
             } else
             if (sqft == 1) {
                 quote = apply_advanced(540 + additional()) 
@@ -114,8 +114,8 @@
         var jadu = document.getElementById("jadu").value;
         var adu = document.getElementById("adu").value;
         var additional = 0; 
-        if (stories == 2) {additional = additional + 30}
-        if (stories == 3) {additional = additional + 100}
+        if (stories == 2) {additional = additional + 60}
+        if (stories == 3) {additional = additional + 120}
         if (jadu == "yes") {additional = additional + 125}
         if (adu == "attached") {additional = additional + 155}
         if (adu == "detached") {additional = additional + 425}
@@ -128,7 +128,7 @@
         if (window_quote == "yes") {quote = quote * 1.1}    
         if (saver == "paloalto") {quote = quote * 1.07}
         if (saver == "ultimate") {quote = quote * 1.2}
-       return "$" + Math.ceil(quote) + " - $" + Math.ceil(quote * 1.25);
+       return "$" + Math.ceil(quote) + " - $" + Math.ceil(quote + 200);
     }
     function pricing_note(){
       return " (CF1R registration fees included)";
